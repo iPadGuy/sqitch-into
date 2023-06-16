@@ -1,0 +1,14 @@
+#+TITLE:	Sqitch Tutorial
+#+SUBTITLE:	Log
+#+DATE:		2023-06-16 12:09:50-04:00
+#+LASTMOD:  
+#+OPTIONS:	toc:nil num:nil
+#+STARTUP:	indent show3levels
+#+CATEGORIES[]:	Tutorials
+#+TAGS[]:	log python
+
+* Friday, June 16, 2023
+- 
+- 
+
+
