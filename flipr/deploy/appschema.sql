@@ -3,5 +3,6 @@
 BEGIN;
 
 -- XXX Add DDLs here.
+CREATE SCHEMA flipr;
 
 COMMIT;

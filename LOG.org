@@ -1,14 +1,41 @@
 #+TITLE:	Sqitch Tutorial
 #+SUBTITLE:	Log
 #+DATE:		2023-06-16 12:09:50-04:00
-#+LASTMOD:  
+#+LASTMOD: 2023-06-16 17:34:35-0400 (EDT)
 #+OPTIONS:	toc:nil num:nil
 #+STARTUP:	indent show3levels
 #+CATEGORIES[]:	Tutorials
-#+TAGS[]:	log python
+#+TAGS[]:	log sqitch database-management versioning
 
 * Friday, June 16, 2023
-- 
-- 
-
-
+:LOGBOOK:
+CLOCK: [2023-06-16 Fri 16:45]
+:END:
+** Commands
+*** Initialize
+- ~sqitch init flipr --uri https://github.com/iPadGuy/sqitch-into --engine pg~
+*** Configure
+- ~sqitch config --user user.name 'iPad Guy'~
+- ~sqitch config --user user.email 'ipad.guy.100@gmx.com'~
+*** Add a Database Change
+- ~sqitch add appschema -n 'Add schema for all flipr objects.'~
+*** Create the Database
+- ~createdb flipr_test~
+*** Deploy the Change(s)
+- ~sqitch deploy db:pg:flipr_test~
+*** Visual Confirmation
+- ~psql -d flipr_test -c '\dn flipr'~
+*** Verify the Change(s)
+- ~sqitch verify db:pg:flipr_test~
+*** Check Status of Changes and Deployments
+- ~sqitch status db:pg:flipr_test~
+*** Revert Changes
+- ~sqitch revert db:pg:flipr_test~
+*** View Log
+- ~sqitch log db:pg:flipr_test~
+** Files
+- [[./flipr/sqitch.conf]]
+- [[./flipr/sqitch.plan]]
+- [[./flipr/deploy/appschema.sql]]
+- [[./flipr/revert/appschema.sql]]
+- [[./flipr/verify/appschema.sql]]

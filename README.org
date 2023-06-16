@@ -1,13 +1,13 @@
 #+TITLE:	Sqitch Tutorial
 #+SUBTITLE:	README
 #+DATE:		2023-06-16 12:09:50-04:00
-#+LASTMOD:  
+#+LASTMOD: 2023-06-16 17:00:43-0400 (EDT)
 #+OPTIONS:	toc:nil num:nil
 #+STARTUP:	indent showeverything
 #+CATEGORIES[]:	Tutorials
-#+TAGS[]:	readme python
+#+TAGS[]:	readme sqitch database-management versioning
 
-URL: 
+URL: https://sqitch.org/docs/manual/sqitchtutorial/
 
 * Description
-
+Another database migration tool
