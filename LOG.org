@@ -1,7 +1,7 @@
 #+TITLE:	Sqitch Tutorial
 #+SUBTITLE:	Log
 #+DATE:		2023-06-16 12:09:50-04:00
-#+LASTMOD: 2023-06-16 17:34:35-0400 (EDT)
+#+LASTMOD: 2023-06-16 17:50:07-0400 (EDT)
 #+OPTIONS:	toc:nil num:nil
 #+STARTUP:	indent show3levels
 #+CATEGORIES[]:	Tutorials
@@ -15,6 +15,7 @@ CLOCK: [2023-06-16 Fri 16:45]
 *** Initialize
 - ~sqitch init flipr --uri https://github.com/iPadGuy/sqitch-into --engine pg~
 *** Configure
+*It seems that sqitch does not recognize local ~git~ settings*
 - ~sqitch config --user user.name 'iPad Guy'~
 - ~sqitch config --user user.email 'ipad.guy.100@gmx.com'~
 *** Add a Database Change
@@ -33,7 +34,19 @@ CLOCK: [2023-06-16 Fri 16:45]
 - ~sqitch revert db:pg:flipr_test~
 *** View Log
 - ~sqitch log db:pg:flipr_test~
+*** Commit Changes to Version Control
+- ~git add . && git commit -m 'Add flipr schema'~
+*** Re-Deploy and Verify
+- ~sqitch deploy --verify db:pg:flipr_test~
+*** Add a Sqitch Target (Aliases)
+- ~sqitch target add flipr_test db:pg:flipr_test~
+- ~sqitch engine add pg flipr_test~
+- ~sqitch status~ (Instead of ~sqitch status db:pg:flipr_test~)
+*** Ensure Changes are Verified After Deployment
+- ~sqitch config --bool deploy.verify true~
+- ~sqitch config --bool rebase.verify true~
 ** Files
+- [[~/.sqitch/sqitch.conf]]
 - [[./flipr/sqitch.conf]]
 - [[./flipr/sqitch.plan]]
 - [[./flipr/deploy/appschema.sql]]
