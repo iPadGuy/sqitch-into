@@ -1,0 +1,5 @@
+%syntax-version=1.0.0
+%project=flipr
+%uri=https://github.com/iPadGuy/sqitch-into
+
+appschema 2023-06-16T16:49:33Z iPad Guy <ipad.guy.100@gmx.com> # Add schema for all flipr objects.
