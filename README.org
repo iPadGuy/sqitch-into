@@ -1,7 +1,7 @@
 #+TITLE:	Sqitch Tutorial
 #+SUBTITLE:	README
 #+DATE:		2023-06-16 12:09:50-04:00
-#+LASTMOD: 2023-06-16 17:00:43-0400 (EDT)
+#+LASTMOD: 2023-06-17 06:50:08-0400 (EDT)
 #+OPTIONS:	toc:nil num:nil
 #+STARTUP:	indent showeverything
 #+CATEGORIES[]:	Tutorials
@@ -10,4 +10,5 @@
 URL: https://sqitch.org/docs/manual/sqitchtutorial/
 
 * Description
-Another database migration tool
+- Another database migration tool
+- It is what I was expecting when I went hunting for a database versioning tool and found SQLAlchemy and Alembic
