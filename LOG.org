@@ -1,7 +1,7 @@
 #+TITLE:	Sqitch Tutorial
 #+SUBTITLE:	Log
 #+DATE:		2023-06-16 12:09:50-04:00
-#+LASTMOD: 2023-06-16 20:20:25-0400 (EDT)
+#+LASTMOD: 2023-06-16 21:27:56-0400 (EDT)
 #+OPTIONS:	toc:nil num:nil
 #+STARTUP:	indent show3levels
 #+CATEGORIES[]:	Tutorials
@@ -63,3 +63,28 @@ CLOCK: [2023-06-16 Fri 16:45]--[2023-06-16 Fri 18:15] =>  1:30
 - ~sqitch deploy~
 - ~sqitch verify~
 - ~sqitch status~
+*** Revert Changes
+- ~sqitch revert --to @HEAD^ -y~
+- ~git add .~
+- ~git commit -am "Add users table."~
+- ~sqitch deploy~
+- ~sqitch status~
+** Add Two More Dependencies
+*** Files
+- [[./flipr/deploy/insert_user.sql]]
+- [[./flipr/verify/insert_user.sql]]
+- [[./flipr/revert/insert_user.sql]]
+- [[./flipr/deploy/change_pass.sql]]
+- [[./flipr/verify/change_pass.sql]]
+- [[./flipr/revert/change_pass.sql]]
+*** Add Database Change
+- ~sqitch add insert_user --requires users --requires appschema \
+  -n 'Creates a function to insert a user.'~
+- ~sqitch add change_pass --requires users --requires appschema \
+  -n 'Creates a function to change a user password.'~
+*** Deploy, Verify, Revert
+- ~sqitch deploy~
+- ~psql -d flipr_test -c '\df flipr.*'~
+- ~sqitch status~
+- ~sqitch revert -y --to @HEAD^^~
+
