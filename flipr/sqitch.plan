@@ -6,3 +6,4 @@ appschema 2023-06-16T16:49:33Z iPad Guy <ipad.guy.100@gmx.com> # Add schema for 
 users [appschema] 2023-06-16T22:09:41Z iPad Guy <ipad.guy.100@gmx.com> # Creates table to track our users.
 insert_user [users appschema] 2023-06-17T00:29:35Z iPad Guy <ipad.guy.100@gmx.com> # Creates a function to insert a user.
 change_pass [users appschema] 2023-06-17T00:30:17Z iPad Guy <ipad.guy.100@gmx.com> # Creates a function to change a user password.
+@v1.0.0-dev1 2023-06-17T01:33:28Z iPad Guy <ipad.guy.100@gmx.com> # Tag v1.0.0-dev1.
