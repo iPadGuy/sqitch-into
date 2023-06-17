@@ -12,7 +12,3 @@ flips [appschema users] 2023-06-17T01:40:42Z iPad Guy <ipad.guy.100@gmx.com> # A
 insert_flip [flips users appschema] 2023-06-17T11:47:00Z iPad Guy <ipad.guy.100@gmx.com> # Creates a function to insert a flip
 delete_flip [flips users appschema] 2023-06-17T11:47:39Z iPad Guy <ipad.guy.100@gmx.com> # Creates a function to delete a flip
 @v1.0.0-dev2 2023-06-17T12:31:10Z iPad Guy <ipad.guy.100@gmx.com> # Tag v1.0.0-dev2.
-
-pgcrypto 2023-06-17T12:56:41Z iPad Guy <ipad.guy.100@gmx.com> # Adds pgcrypto extention to the database
-insert_user [insert_user@v1.0.0-dev2 pgcrypto] 2023-06-17T16:13:47Z iPad Guy <ipad.guy.100@gmx.com> # Change insert_user to use pgcrypto.
-change_pass [change_pass@v1.0.0-dev2 pgcrypto] 2023-06-17T16:22:05Z iPad Guy <ipad.guy.100@gmx.com> # Change change_pass to use pgcrypto.

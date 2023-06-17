@@ -1,7 +1,7 @@
 #+TITLE:	Sqitch Tutorial
 #+SUBTITLE:	Log
 #+DATE:		2023-06-16 12:09:50-04:00
-#+LASTMOD: 2023-06-17 08:04:53-0400 (EDT)
+#+LASTMOD: 2023-06-17 12:20:18-0400 (EDT)
 #+OPTIONS:	toc:nil num:nil
 #+STARTUP:	indent show3levels
 #+CATEGORIES[]:	Tutorials
@@ -10,7 +10,7 @@
 * Saturday, June 17, 2023
 ** Wash, Rinse, Repeat
 :LOGBOOK:
-CLOCK: [2023-06-17 Sat 06:45]
+CLOCK: [2023-06-17 Sat 06:45]--[2023-06-17 Sat 08:00] =>  1:15
 :END:
 *** Files
 - [[./flipr/sqitch.plan]]
@@ -23,6 +23,17 @@ CLOCK: [2023-06-17 Sat 06:45]
 *** Add Database Changes
 - ~sqitch add insert_flip --requires flips --requires users --requires appschema -n "Creates a function to insert a flip"~
 - ~sqitch add delete_flip --requires flips --requires users --requires appschema -n "Creates a function to delete a flip~
+** Merge ~flip~ with ~main~ branch in ~git~
+- ~git checkout main~
+- ~git merge --no-ff flip~
+- ~echo sqitch.plan merge=union >> ../.gitattributes~
+- 
+** In-Place Changes
+*** Add Change for Database Extension
+**** Files
+- [[./flipr/deploy/pgcrypto.sql]]
+- [[./flipr/verify/pgcrypto.sql]]
+- [[./flipr/revert/pgcrypto.sql]]
 
 * Friday, June 16, 2023
 :LOGBOOK:
