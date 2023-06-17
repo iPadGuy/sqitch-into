@@ -1,15 +1,32 @@
 #+TITLE:	Sqitch Tutorial
 #+SUBTITLE:	Log
 #+DATE:		2023-06-16 12:09:50-04:00
-#+LASTMOD: 2023-06-16 21:41:18-0400 (EDT)
+#+LASTMOD: 2023-06-17 08:04:53-0400 (EDT)
 #+OPTIONS:	toc:nil num:nil
 #+STARTUP:	indent show3levels
 #+CATEGORIES[]:	Tutorials
 #+TAGS[]:	log sqitch database-management versioning
 
+* Saturday, June 17, 2023
+** Wash, Rinse, Repeat
+:LOGBOOK:
+CLOCK: [2023-06-17 Sat 06:45]
+:END:
+*** Files
+- [[./flipr/sqitch.plan]]
+- [[./flipr/deploy/insert_flip.sql]]
+- [[./flipr/verify/insert_flip.sql]]
+- [[./flipr/revert/insert_flip.sql]]
+- [[./flipr/deploy/delete_flip.sql]]
+- [[./flipr/verify/delete_flip.sql]]
+- [[./flipr/revert/delete_flip.sql]]
+*** Add Database Changes
+- ~sqitch add insert_flip --requires flips --requires users --requires appschema -n "Creates a function to insert a flip"~
+- ~sqitch add delete_flip --requires flips --requires users --requires appschema -n "Creates a function to delete a flip~
+
 * Friday, June 16, 2023
 :LOGBOOK:
-CLOCK: [2023-06-16 Fri 19:45]
+CLOCK: [2023-06-16 Fri 19:45]--[2023-06-16 Fri 22:00] =>  2:15
 CLOCK: [2023-06-16 Fri 16:45]--[2023-06-16 Fri 18:15] =>  1:30
 :END:
 ** Files
@@ -98,4 +115,10 @@ CLOCK: [2023-06-16 Fri 16:45]--[2023-06-16 Fri 18:15] =>  1:30
 - ~sqitch tag v1.0.0-dev1 -n 'Tag v1.0.0-dev1.'~
 - ~git commit -am 'Tag the database with v1.0.0-dev1.'~
 - ~git tag v1.0.0-dev1 -am 'Tag v1.0.0-dev1'~
-- 
+** Flip Out!
+*** Files
+- [[./flipr/deploy/flips.sql]]
+- [[./flipr/verify/flips.sql]]
+- [[./flipr/revert/flips.sql]]
+*** Add Change
+- ~sqitch add flips -r appschema -r users -n 'Adds table for storing flips.'~

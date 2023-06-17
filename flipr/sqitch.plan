@@ -9,3 +9,5 @@ change_pass [users appschema] 2023-06-17T00:30:17Z iPad Guy <ipad.guy.100@gmx.co
 @v1.0.0-dev1 2023-06-17T01:33:28Z iPad Guy <ipad.guy.100@gmx.com> # Tag v1.0.0-dev1.
 
 flips [appschema users] 2023-06-17T01:40:42Z iPad Guy <ipad.guy.100@gmx.com> # Adds table for storing flips.
+insert_flip [flips users appschema] 2023-06-17T11:47:00Z iPad Guy <ipad.guy.100@gmx.com> # Creates a function to insert a flip
+delete_flip [flips users appschema] 2023-06-17T11:47:39Z iPad Guy <ipad.guy.100@gmx.com> # Creates a function to delete a flip
