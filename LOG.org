@@ -1,7 +1,7 @@
 #+TITLE:	Sqitch Tutorial
 #+SUBTITLE:	Log
 #+DATE:		2023-06-16 12:09:50-04:00
-#+LASTMOD: 2023-06-16 21:27:56-0400 (EDT)
+#+LASTMOD: 2023-06-16 21:41:18-0400 (EDT)
 #+OPTIONS:	toc:nil num:nil
 #+STARTUP:	indent show3levels
 #+CATEGORIES[]:	Tutorials
@@ -9,6 +9,7 @@
 
 * Friday, June 16, 2023
 :LOGBOOK:
+CLOCK: [2023-06-16 Fri 19:45]
 CLOCK: [2023-06-16 Fri 16:45]--[2023-06-16 Fri 18:15] =>  1:30
 :END:
 ** Files
@@ -87,4 +88,14 @@ CLOCK: [2023-06-16 Fri 16:45]--[2023-06-16 Fri 18:15] =>  1:30
 - ~psql -d flipr_test -c '\df flipr.*'~
 - ~sqitch status~
 - ~sqitch revert -y --to @HEAD^^~
-
+- ~psql -d flipr_test -c '\df flipr.*'~
+- ~git add .~
+- ~git commit -am 'Add `insert_user()` and `change_pass()`.'~
+- ~sqitch deploy~
+- ~sqitch status~
+- ~sqitch verify~
+*** Ship it!
+- ~sqitch tag v1.0.0-dev1 -n 'Tag v1.0.0-dev1.'~
+- ~git commit -am 'Tag the database with v1.0.0-dev1.'~
+- ~git tag v1.0.0-dev1 -am 'Tag v1.0.0-dev1'~
+- 
