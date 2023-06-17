@@ -3,3 +3,4 @@
 %uri=https://github.com/iPadGuy/sqitch-into
 
 appschema 2023-06-16T16:49:33Z iPad Guy <ipad.guy.100@gmx.com> # Add schema for all flipr objects.
+users [appschema] 2023-06-16T22:09:41Z iPad Guy <ipad.guy.100@gmx.com> # Creates table to track our users.
